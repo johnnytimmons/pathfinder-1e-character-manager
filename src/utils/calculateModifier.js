@@ -12,11 +12,11 @@ const calculateModifier = ({ value, keyAbility }) => {
   };
 
   const keyAbilityName = keyAbilityModifiers[keyAbility] || "Unknown";
-  const initialValue = keyAbilityName === "unknown" ? 0 : 10;
+  const initialValue = keyAbilityName === "Unknown" ? 0 : 10;
 
   const modifier = Math.floor((value - initialValue) / 2);
 
-  return <span>(Modifier: {modifier})</span>;
+  return modifier;
 };
 
 export default calculateModifier;

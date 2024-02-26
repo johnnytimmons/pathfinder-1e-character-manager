@@ -1,9 +1,9 @@
 // SkillsList.js
 
 import React from "react";
-import SkillsComponent from "./skillsComponent.js";
+import SkillsComponent from "./SkillsComponent.js";
 
-const skillsList = () => {
+const SkillsList = ({ stats }) => {
   const skills = [
     { name: "Acrobatics", keyAbility: "Dex" },
     { name: "Appraise", keyAbility: "Int" },
@@ -11,7 +11,7 @@ const skillsList = () => {
     { name: "Climb", keyAbility: "Str" },
     { name: "Craft", keyAbility: "Int" },
     { name: "Diplomacy", keyAbility: "Cha" },
-    { name: "Disable Device", keyAbility: "" },
+    { name: "Disable Device", keyAbility: "Dex" },
     { name: "Disguise", keyAbility: "Cha" },
     { name: "Escape Artist", keyAbility: "Dex" },
     { name: "Fly", keyAbility: "Dex" },
@@ -45,9 +45,9 @@ const skillsList = () => {
   return (
     <div>
       <h1>Skills List</h1>
-      <SkillsComponent skills={skills} />
+      <SkillsComponent skills={skills} stats={stats} />
     </div>
   );
 };
 
-export default skillsList;
+export default SkillsList;

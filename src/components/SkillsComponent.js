@@ -1,27 +1,23 @@
 //SkillsComponent
 import React from "react";
-import useStatInput from "./useStatInput";
-import calculateModifier from "./CalculateModifier";
+import useStatInput from "../hooks/useStatInput";
+import calculateModifier from "../utils/calculateModifier";
 import DiceRoller from "./DiceRoller";
 
-const SkillsComponent = ({ skills }) => {
+const SkillsComponent = ({ skills, stats }) => {
   return (
     <div>
       <h2>Skills</h2>
       <ul>
         {skills.map((skill) => {
-          const { value, onChange } = useStatInput(0);
-          const modifier = calculateModifier(value, skill.keyAbility);
+          const stat = stats[skill.keyAbility];
+          const modifier = calculateModifier(stat.value, skill.keyAbility);
 
           return (
             <li key={skill.name}>
               <span>{skill.name}</span>
+              <span>Mod: {modifier}</span>
               <DiceRoller modifier={modifier} utilityType={skill.name} />
-              <input
-                type="number"
-                value={value}
-                onChange={(e) => onChange(Number(e.target.value))}
-              />
             </li>
           );
         })}

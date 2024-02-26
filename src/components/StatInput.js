@@ -2,7 +2,7 @@
 import react from "react";
 
 const StatInput = ({ label, value, onChange }) => {
-  //calculate the modifier based on the formula (value-10) / 2 (rounded down)
+  //calculate the modifier based on the formula (value-10) / 2 (rounded down) - use calculate modifier and dont do it again here
   const modifier = Math.floor((value - 10) / 2);
   return (
     <div>

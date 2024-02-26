@@ -1,7 +1,7 @@
 // StatsCalculator.js
 import React from "react";
 import StatInput from "./StatInput";
-import useStatInput from "./useStatInput";
+import useStatInput from "../hooks/useStatInput";
 import SkillsList from "./SkillsList";
 
 const StatsCalculator = () => {
@@ -11,6 +11,14 @@ const StatsCalculator = () => {
   const intelligence = useStatInput(10);
   const wisdom = useStatInput(10);
   const charisma = useStatInput(10);
+  const stats = {
+    Str: strength,
+    Dex: dexterity,
+    Con: constitution,
+    Cha: charisma,
+    Int: intelligence,
+    Wis: wisdom,
+  };
 
   return (
     <div>
@@ -45,7 +53,7 @@ const StatsCalculator = () => {
         onChange={charisma.onChange}
       />
 
-      <SkillsList />
+      <SkillsList stats={stats} />
     </div>
   );
 };

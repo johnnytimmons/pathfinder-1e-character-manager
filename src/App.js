@@ -1,5 +1,5 @@
 import "./styles/styles.css";
-import StatsCalculator from "./StatsCalculator";
+import StatsCalculator from "./components/StatsCalculator";
 //Hello World
 function App() {
   return (
